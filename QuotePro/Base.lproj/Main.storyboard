@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -31,8 +32,68 @@
                     <view key="view" contentMode="scaleToFill" id="5a3-Zj-EYr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-bJ-vjZ">
+                                <rect key="frame" x="50" y="420" width="500" height="40"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lEU-Fn-sah"/>
+                                </constraints>
+                                <state key="normal" title="Random Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-LF-kPB">
+                                <rect key="frame" x="50" y="465" width="500" height="40"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="w6y-rh-0TU"/>
+                                </constraints>
+                                <state key="normal" title="Random Quote">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfF-IW-A97">
+                                <rect key="frame" x="50" y="510" width="500" height="40"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vYf-2L-Nw5"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvV-6K-au2">
+                                <rect key="frame" x="150" y="84" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="GKd-QZ-s2T"/>
+                                    <constraint firstAttribute="height" constant="300" id="PxJ-rQ-7Wt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mfF-IW-A97" firstAttribute="top" secondItem="6Xp-LF-kPB" secondAttribute="bottom" constant="5" id="6AD-Up-bcs"/>
+                            <constraint firstItem="lvV-6K-au2" firstAttribute="centerX" secondItem="5a3-Zj-EYr" secondAttribute="centerX" id="8sC-YP-frV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Xp-LF-kPB" secondAttribute="trailing" constant="30" id="FAX-rE-Oyb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HaF-bJ-vjZ" secondAttribute="trailing" constant="30" id="IkT-Br-yFx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mfF-IW-A97" secondAttribute="trailing" constant="30" id="SMi-h1-t9W"/>
+                            <constraint firstItem="9NW-F0-5Z7" firstAttribute="top" secondItem="mfF-IW-A97" secondAttribute="bottom" constant="50" id="YwB-Q6-G6B"/>
+                            <constraint firstItem="mfF-IW-A97" firstAttribute="centerX" secondItem="5a3-Zj-EYr" secondAttribute="centerX" id="bB1-mQ-3u3"/>
+                            <constraint firstItem="6Xp-LF-kPB" firstAttribute="centerX" secondItem="5a3-Zj-EYr" secondAttribute="centerX" id="gGL-3e-mVJ"/>
+                            <constraint firstItem="mfF-IW-A97" firstAttribute="leading" secondItem="5a3-Zj-EYr" secondAttribute="leadingMargin" constant="30" id="hlb-kr-PO7"/>
+                            <constraint firstItem="HaF-bJ-vjZ" firstAttribute="leading" secondItem="5a3-Zj-EYr" secondAttribute="leadingMargin" constant="30" id="jFk-E2-78z"/>
+                            <constraint firstItem="lvV-6K-au2" firstAttribute="top" secondItem="W93-YQ-Iqz" secondAttribute="bottom" constant="20" id="kI2-bV-tBq"/>
+                            <constraint firstItem="6Xp-LF-kPB" firstAttribute="top" secondItem="HaF-bJ-vjZ" secondAttribute="bottom" constant="5" id="mSw-3y-Irl"/>
+                            <constraint firstItem="6Xp-LF-kPB" firstAttribute="leading" secondItem="5a3-Zj-EYr" secondAttribute="leadingMargin" constant="30" id="seV-U8-evF"/>
+                            <constraint firstItem="HaF-bJ-vjZ" firstAttribute="centerX" secondItem="5a3-Zj-EYr" secondAttribute="centerX" id="sh4-Pe-n8X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="builderView" destination="5a3-Zj-EYr" id="CqS-80-cF9"/>
+                        <outlet property="previewView" destination="lvV-6K-au2" id="qea-OY-0d0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3X-qE-hrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
