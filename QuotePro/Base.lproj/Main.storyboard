@@ -183,7 +183,6 @@
                                     <outlet property="authorLabel" destination="6CY-Ho-xXf" id="oG6-X8-tn2"/>
                                     <outlet property="previewView" destination="pGf-Km-WQG" id="Nle-4h-iy0"/>
                                     <outlet property="quoteLabel" destination="VW7-OT-tLL" id="i53-p4-AFa"/>
-                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="3g5-t3-D5n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

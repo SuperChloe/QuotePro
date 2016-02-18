@@ -62,6 +62,7 @@ class QuoteBuilderViewController: UIViewController {
             realm.add(quote)
         }
         
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     // MARK: Helper methods
