@@ -12,9 +12,12 @@ import Nuke
 struct PhotoService {
     
     static func generatePhoto(completionHandler: (UIImage) -> Void) {
-        let request = ImageRequest(URL: NSURL(string: "https://unsplash.it/300/300/?random")!)
+        var request = ImageRequest(URL: NSURL(string: "https://unsplash.it/300/300/?random")!)
+        request.memoryCacheStorageAllowed = false
         Nuke.taskWith(request) { response in
             let image = response.image
+            print("GARBGE BOY")
+            print(image)
             completionHandler(image!)
         }.resume()
     }

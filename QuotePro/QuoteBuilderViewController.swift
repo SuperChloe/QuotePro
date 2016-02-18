@@ -13,22 +13,16 @@ class QuoteBuilderViewController: UIViewController {
     @IBOutlet var builderView: UIView!
     @IBOutlet weak var previewView: UIView!
     var quote: Quote = Quote()
+    var quoteView: QuoteView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        QuoteService.generateQuote({ (quoteText: String, quoteAuthor: String) in
-            print("First quote")
-            print(quoteText)
-            print(quoteAuthor)
-        })
-        PhotoService.generatePhoto({ (photo: UIImage) in
-            print(photo)
-        })
+        quoteView = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil).first! as? QuoteView
+        quoteView?.frame.size = previewView.frame.size
+        previewView.addSubview(quoteView!)
         
-        let quoteView = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil).first! as! QuoteView
-        quoteView.frame.size = previewView.frame.size
-        previewView.addSubview(quoteView)
+        newQuote()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,21 +33,62 @@ class QuoteBuilderViewController: UIViewController {
     // MARK: Buttons
     
     @IBAction func randomImage(sender: UIButton) {
-        PhotoService.generatePhoto({ (photo: UIImage) in
+        PhotoService.generatePhoto({ [weak self] (photo: UIImage) in
             print(photo)
+            
+            self?.quote.quotePhoto?.image = NSData(data: UIImageJPEGRepresentation(photo, 1.0)!)
+            
+            self?.reset()
         })
     }
     
     @IBAction func randomQuote(sender: UIButton) {
-        QuoteService.generateQuote({ (quoteText: String, quoteAuthor: String) in
-            print("I got the generated quote!")
+        QuoteService.generateQuote({ [weak self] (quoteText: String, quoteAuthor: String) in
+            print("First quote")
             print(quoteText)
             print(quoteAuthor)
+            
+            self?.quote.quoteText = quoteText
+            self?.quote.quoteAuthor = quoteAuthor
+            
+            self?.reset()
         })
     }
     
     @IBAction func save(sender: UIButton) {
         // Save to Realm
     }
-
+    
+    // MARK: Helper methods
+    
+    func newQuote() {
+        PhotoService.generatePhoto({ [weak self] (photo: UIImage) in
+            print(photo)
+            
+            self?.quote.quotePhoto = Photo()
+            self?.quote.quotePhoto?.image = NSData(data: UIImageJPEGRepresentation(photo, 1.0)!)
+            
+            let e = self?.quote.quotePhoto
+            let d = self?.quote.quotePhoto?.image
+            
+            self?.reset()
+        })
+        
+        QuoteService.generateQuote({ [weak self] (quoteText: String, quoteAuthor: String) in
+            print("First quote")
+            print(quoteText)
+            print(quoteAuthor)
+            
+            self?.quote.quoteText = quoteText
+            self?.quote.quoteAuthor = quoteAuthor
+            
+            self?.reset()
+        })
+    }
+    
+    func reset() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.quoteView?.setupWithQuote(self.quote)
+        })
+    }
 }

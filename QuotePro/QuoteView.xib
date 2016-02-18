@@ -16,16 +16,18 @@
                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-fd-fao">
-                    <rect key="frame" x="10" y="123" width="580" height="17"/>
+                    <rect key="frame" x="10" y="124" width="580" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFN-Cl-ndd">
-                    <rect key="frame" x="10" y="100" width="580" height="21"/>
+                    <rect key="frame" x="10" y="100" width="580" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -42,7 +44,7 @@
                 <constraint firstAttribute="trailing" secondItem="nFN-Cl-ndd" secondAttribute="trailing" constant="10" id="v7P-fu-azq"/>
             </constraints>
             <connections>
-                <outlet property="authorLabel" destination="UuF-fd-fao" id="4xt-63-nLc"/>
+                <outlet property="authorLabel" destination="UuF-fd-fao" id="Db3-CL-ZBc"/>
                 <outlet property="photoView" destination="cXT-Ns-LbQ" id="iJO-kT-Lmp"/>
                 <outlet property="quoteLabel" destination="nFN-Cl-ndd" id="grn-Nb-0hl"/>
             </connections>
