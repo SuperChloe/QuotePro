@@ -21,9 +21,14 @@ class MasterViewController: UITableViewController {
 
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
 //        self.navigationItem.rightBarButtonItem = addButton
+       
+        let qs = QuoteService()
+        qs.generateQuote()
+
     }
 
     override func viewWillAppear(animated: Bool) {
+
     }
 
     override func didReceiveMemoryWarning() {

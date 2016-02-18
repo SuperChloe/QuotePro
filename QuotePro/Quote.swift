@@ -11,7 +11,8 @@ import RealmSwift
 
 class Quote: Object {
     
-    var quote: NSString!
+    var quote: String!
+    var author: String!
     var photo: Photo!
     
 // Specify properties to ignore (Realm won't persist these)
