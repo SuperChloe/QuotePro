@@ -24,6 +24,9 @@ class MasterViewController: UITableViewController {
        
         let qs = QuoteService()
         qs.generateQuote()
+        
+        let ps = PhotoService()
+        ps.generatePhoto()
 
     }
 
