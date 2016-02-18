@@ -22,6 +22,7 @@ class MasterViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         
         results = try! Realm().objects(Quote)
+        tableView.reloadData()
 
     }
 
@@ -53,13 +54,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> QuoteTableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? QuoteTableViewCell
 
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? QuoteTableViewCell
         let quote = results![indexPath.row]
-        print(quote)
-        print(quote.quoteText)
-        print(quote.quoteAuthor)
-        cell!.testLabel!.text = quote.quoteAuthor
+        cell!.previewView.contentMode = .ScaleAspectFill
+        cell!.previewView.clipsToBounds = true
+        cell!.previewView.image = UIImage(data: (quote.quotePhoto?.image)!)
+        cell!.quoteLabel!.text = quote.quoteText
+        cell!.authorLabel!.text = quote.quoteAuthor
         return cell!
     }
 
@@ -76,7 +78,5 @@ class MasterViewController: UITableViewController {
 //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 //        }
 //    }
-
-
 }
 
