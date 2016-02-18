@@ -11,7 +11,7 @@ import RealmSwift
 
 class Photo: Object {
     
-    var image: NSData?
+    dynamic var image: NSData?
     
 // Specify properties to ignore (Realm won't persist these)
     

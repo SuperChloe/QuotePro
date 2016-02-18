@@ -11,9 +11,9 @@ import RealmSwift
 
 class Quote: Object {
     
-    var quoteText: String?
-    var quoteAuthor: String?
-    var quotePhoto: Photo?
+    dynamic var quoteText: String?
+    dynamic var quoteAuthor: String?
+    dynamic var quotePhoto: Photo?
     
 // Specify properties to ignore (Realm won't persist these)
     
