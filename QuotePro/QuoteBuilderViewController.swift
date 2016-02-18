@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class QuoteBuilderViewController: UIViewController {
 
@@ -56,7 +57,11 @@ class QuoteBuilderViewController: UIViewController {
     }
     
     @IBAction func save(sender: UIButton) {
-        // Save to Realm
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(quote)
+        }
+        
     }
     
     // MARK: Helper methods
@@ -67,9 +72,6 @@ class QuoteBuilderViewController: UIViewController {
             
             self?.quote.quotePhoto = Photo()
             self?.quote.quotePhoto?.image = NSData(data: UIImageJPEGRepresentation(photo, 1.0)!)
-            
-            let e = self?.quote.quotePhoto
-            let d = self?.quote.quotePhoto?.image
             
             self?.reset()
         })

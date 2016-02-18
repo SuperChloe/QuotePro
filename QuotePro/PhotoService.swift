@@ -16,8 +16,6 @@ struct PhotoService {
         request.memoryCacheStorageAllowed = false
         Nuke.taskWith(request) { response in
             let image = response.image
-            print("GARBGE BOY")
-            print(image)
             completionHandler(image!)
         }.resume()
     }
