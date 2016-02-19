@@ -10,20 +10,17 @@ import UIKit
 import RealmSwift
 
 class MasterViewController: UITableViewController {
-
-    var detailViewController: DetailViewController? = nil
+    
     var results: Results<Quote>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func viewWillAppear(animated: Bool) {
         
         results = try! Realm().objects(Quote)
         tableView.reloadData()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,17 +28,6 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Segues
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDetail" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let object = results![indexPath.row]
-//                let controller = segue.destinationViewController as! DetailViewController
-//                controller.detailItem = object
-//            }
-//        }
-//    }
 
     // MARK: - Table View
 
@@ -67,16 +53,9 @@ class MasterViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let quote = results![indexPath.row]
-        print(quote)
-        print(quote.quoteText)
         let quoteView = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil).first! as? QuoteView
         quoteView!.setupWithQuote(quote)
         share(snapshot(quoteView!))
-    }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
     }
     
     func snapshot(view: UIView) -> UIImage {
@@ -94,13 +73,5 @@ class MasterViewController: UITableViewController {
         self.presentViewController(activityVC, animated: true, completion: nil)
     }
 
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete {
-//            objects.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//        } else if editingStyle == .Insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
 }
 

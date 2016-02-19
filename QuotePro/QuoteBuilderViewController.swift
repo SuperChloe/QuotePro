@@ -45,9 +45,6 @@ class QuoteBuilderViewController: UIViewController {
     
     @IBAction func randomQuote(sender: UIButton) {
         QuoteService.generateQuote({ [weak self] (quoteText: String, quoteAuthor: String) in
-            print("First quote")
-            print(quoteText)
-            print(quoteAuthor)
             
             self?.quote.quoteText = quoteText
             self?.quote.quoteAuthor = quoteAuthor

@@ -13,7 +13,6 @@
 		898C5BAC1C7645FA00E67F6E /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898C5BAB1C7645FA00E67F6E /* QuoteTableViewCell.swift */; };
 		89F51B3A1C74E8CE00531F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F51B391C74E8CE00531F96 /* AppDelegate.swift */; };
 		89F51B3C1C74E8CE00531F96 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F51B3B1C74E8CE00531F96 /* MasterViewController.swift */; };
-		89F51B3E1C74E8CE00531F96 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F51B3D1C74E8CE00531F96 /* DetailViewController.swift */; };
 		89F51B411C74E8CE00531F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F51B3F1C74E8CE00531F96 /* Main.storyboard */; };
 		89F51B431C74E8CE00531F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F51B421C74E8CE00531F96 /* Assets.xcassets */; };
 		89F51B461C74E8CE00531F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F51B441C74E8CE00531F96 /* LaunchScreen.storyboard */; };
@@ -34,7 +33,6 @@
 		89F51B361C74E8CE00531F96 /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F51B391C74E8CE00531F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89F51B3B1C74E8CE00531F96 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		89F51B3D1C74E8CE00531F96 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		89F51B401C74E8CE00531F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89F51B421C74E8CE00531F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89F51B451C74E8CE00531F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			children = (
 				89F51B391C74E8CE00531F96 /* AppDelegate.swift */,
 				89F51B3B1C74E8CE00531F96 /* MasterViewController.swift */,
-				89F51B3D1C74E8CE00531F96 /* DetailViewController.swift */,
 				89F51B3F1C74E8CE00531F96 /* Main.storyboard */,
 				89F51B551C74F1E700531F96 /* QuoteBuilderViewController.swift */,
 				898C5BAB1C7645FA00E67F6E /* QuoteTableViewCell.swift */,
@@ -242,7 +239,6 @@
 				89F51B4E1C74ED3200531F96 /* Quote.swift in Sources */,
 				89F51B521C74EF7900531F96 /* QuoteView.swift in Sources */,
 				898C5BA81C75021600E67F6E /* PhotoService.swift in Sources */,
-				89F51B3E1C74E8CE00531F96 /* DetailViewController.swift in Sources */,
 				898C5BAC1C7645FA00E67F6E /* QuoteTableViewCell.swift in Sources */,
 				89F51B3C1C74E8CE00531F96 /* MasterViewController.swift in Sources */,
 				898C5BA61C7501FA00E67F6E /* QuoteService.swift in Sources */,
