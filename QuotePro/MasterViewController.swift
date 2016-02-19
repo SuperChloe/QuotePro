@@ -66,10 +66,12 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let quoteView: QuoteView = QuoteView()
         let quote = results![indexPath.row]
-        quoteView.setupWithQuote(quote)
-        share(snapshot(quoteView))
+        print(quote)
+        print(quote.quoteText)
+        let quoteView = NSBundle.mainBundle().loadNibNamed("QuoteView", owner: nil, options: nil).first! as? QuoteView
+        quoteView!.setupWithQuote(quote)
+        share(snapshot(quoteView!))
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

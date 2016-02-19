@@ -15,6 +15,8 @@ class QuoteView: UIView {
     @IBOutlet weak var authorLabel: UILabel!
     
     func setupWithQuote(quote: Quote) {
+        print(quote.quoteText)
+        
         if let imageData = quote.quotePhoto?.image {
             photoView.image = UIImage(data: imageData)
         }
